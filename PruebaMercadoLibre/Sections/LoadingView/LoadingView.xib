@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoadingView" customModule="PruebaMercadoLibre" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" contentMode="scaleToFill" id="kNt-le-XBG" customClass="LoadingView" customModule="El_Tiempo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <visualEffectView opaque="NO" alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVc-DK-02w">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="MHj-pX-m50">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cargando" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNB-WV-kZP">
+                                <rect key="frame" x="162.66666666666666" y="434" width="68" height="20.666666666666686"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iNB-WV-kZP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MHj-pX-m50" secondAttribute="leading" constant="8" id="3s7-qm-SnY"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iNB-WV-kZP" secondAttribute="trailing" constant="8" id="lXb-Mv-YGs"/>
+                            <constraint firstItem="iNB-WV-kZP" firstAttribute="centerX" secondItem="MHj-pX-m50" secondAttribute="centerX" id="xVJ-fq-jHN"/>
+                        </constraints>
+                    </view>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_spinner_white" translatesAutoresizingMaskIntoConstraints="NO" id="qRU-Ig-4gH">
+                    <rect key="frame" x="179.66666666666666" y="384" width="34" height="34"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="qRU-Ig-4gH" secondAttribute="height" multiplier="1:1" id="HQ9-jT-WjZ"/>
+                        <constraint firstAttribute="width" constant="34" id="fmB-I4-cZO"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="ad2-8R-ghy"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="DVc-DK-02w" firstAttribute="trailing" secondItem="kNt-le-XBG" secondAttribute="trailing" id="EfQ-pG-uDj"/>
+                <constraint firstAttribute="bottom" secondItem="DVc-DK-02w" secondAttribute="bottom" id="GuZ-nH-wih"/>
+                <constraint firstAttribute="centerY" secondItem="qRU-Ig-4gH" secondAttribute="bottom" constant="8" id="MH1-wB-wRZ"/>
+                <constraint firstItem="iNB-WV-kZP" firstAttribute="top" secondItem="qRU-Ig-4gH" secondAttribute="bottom" constant="16" id="Y0K-Cn-oVo"/>
+                <constraint firstItem="qRU-Ig-4gH" firstAttribute="centerX" secondItem="kNt-le-XBG" secondAttribute="centerX" id="qT6-jC-12I"/>
+                <constraint firstItem="DVc-DK-02w" firstAttribute="top" secondItem="kNt-le-XBG" secondAttribute="top" id="upd-1s-IJD"/>
+                <constraint firstItem="DVc-DK-02w" firstAttribute="leading" secondItem="kNt-le-XBG" secondAttribute="leading" id="xCk-Zc-e5Q"/>
+            </constraints>
+            <connections>
+                <outlet property="blurView" destination="DVc-DK-02w" id="1Xb-Aa-teY"/>
+                <outlet property="imageView" destination="qRU-Ig-4gH" id="oMS-d8-PcB"/>
+                <outlet property="titleLabel" destination="iNB-WV-kZP" id="VpI-Ec-UuL"/>
+            </connections>
+            <point key="canvasLocation" x="-172.5" y="18"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_spinner_white" width="60" height="60"/>
+    </resources>
+</document>

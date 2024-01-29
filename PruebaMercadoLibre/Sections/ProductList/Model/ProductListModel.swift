@@ -7,11 +7,6 @@
 
 import Foundation
 
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let productListModel = try? JSONDecoder().decode(ProductListModel.self, from: jsonData)
-
 // MARK: - ProductListModel
 struct ProductListModel: Codable {
     let siteID: String?

@@ -2,7 +2,7 @@
 //  ProductListViewController.swift
 //  PruebaMercadoLibre
 //
-//  Created by MacBook J&J  on 28/01/24.
+//  Created by Juan Camilo Mejia  on 28/01/24.
 //
 
 import UIKit
@@ -23,13 +23,16 @@ class ProductListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        showProgress(message: "Cargando", style: .dark, presentationContext: .overCurrentContext)
         setupCollectionView()
         productListViewModel.fetchProducts(query: "usb 1tb") { result in
             switch result {
             case .success(_):
                 self.productListCollectionView.reloadData()
+                self.progress?.hide(animated: true)
             case .failure(let error):
                 print("Error: \(error)")
+                self.progress?.hide(animated: true)
             }
         }
     }
@@ -96,27 +99,14 @@ extension ProductListViewController: UICollectionViewDelegate, UICollectionViewD
         
         cell.productName.text =  product.title
         cell.productPrice.text = FormatPriceUtility.formatearPrecio(numero: product.price!)
-        cell.layer.borderColor = UIColor.black.cgColor
-        configure(with: product.thumbnail ?? "", imageView: cell.productImage)
-        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor.gray.cgColor
+        self.configure(with: product.thumbnail ?? "", imageView: cell.productImage)
+        cell.layer.borderWidth = 0.5
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        //let width = (collectionView.frame.width - (numberOfColumns - 1) * 0) / numberOfColumns
         let width = (collectionView.frame.width / numberOfColumns)
         return CGSize(width: width, height: width + 30)
-    }
-    
-    func configure(with imageUrl: String, imageView: UIImageView) {
-        if let url = URL(string: imageUrl) {
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let data = data, let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        imageView.image = image
-                    }
-                }
-            }.resume()
-        }
     }
 }
