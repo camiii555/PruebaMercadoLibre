@@ -9,7 +9,6 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
-    
     var progress: LoadingView?
 
     override func viewDidLoad() {
@@ -17,13 +16,12 @@ class BaseViewController: UIViewController {
         
     }
     
-    
     func showProgress(message: String, style: LoadingStyle, presentationContext: PresentationContext) {
         progress = LoadingView.show(inView: view, style: style, presentationContext: presentationContext)
         progress!.titleLabel.text = message
     }
     
-    func configure(with imageUrl: String, imageView: UIImageView) {
+    func configureImage(with imageUrl: String, imageView: UIImageView) {
         if let url = URL(string: imageUrl) {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let data = data, let image = UIImage(data: data) {

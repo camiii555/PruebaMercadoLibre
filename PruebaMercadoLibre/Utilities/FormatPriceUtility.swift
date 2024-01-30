@@ -10,18 +10,18 @@ import Foundation
 
 class FormatPriceUtility {
     
-    static func formatearPrecio(numero: Double) -> String {
+    static func formatNumber(num: Double) -> String {
         // Convert number to integer
-        let numeroEntero = Int(numero)
+        let newNum = Int(num)
         
         // Format integer as price
-        let formateador = NumberFormatter()
-        formateador.numberStyle = .currency
-        formateador.minimumFractionDigits = 0
-        formateador.maximumFractionDigits = 0
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 0
         
-        if let precioFormateado = formateador.string(from: NSNumber(value: numeroEntero)) {
-            return precioFormateado
+        if let formattedNumber = formatter.string(from: NSNumber(value: newNum)) {
+            return formattedNumber
         } else {
             return "Error al formatear el precio"
         }

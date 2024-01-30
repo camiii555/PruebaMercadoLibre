@@ -23,18 +23,8 @@ class ProductListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showProgress(message: "Cargando", style: .dark, presentationContext: .overCurrentContext)
+        setupSearchBar()
         setupCollectionView()
-        productListViewModel.fetchProducts(query: "usb 1tb") { result in
-            switch result {
-            case .success(_):
-                self.productListCollectionView.reloadData()
-                self.progress?.hide(animated: true)
-            case .failure(let error):
-                print("Error: \(error)")
-                self.progress?.hide(animated: true)
-            }
-        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -46,6 +36,11 @@ class ProductListViewController: BaseViewController {
     }
     
     //MARK: - Private Methods
+    
+    private func setupSearchBar() {
+        searchBar.delegate = self
+        searchBar.placeholder = "Comienza a buscar"
+    }
     // collection view configuration
     private func setupCollectionView() {
         productListCollectionView.delegate = self
@@ -98,15 +93,56 @@ extension ProductListViewController: UICollectionViewDelegate, UICollectionViewD
         let product = productListViewModel.product(at: indexPath.row)
         
         cell.productName.text =  product.title
-        cell.productPrice.text = FormatPriceUtility.formatearPrecio(numero: product.price!)
+        cell.productPrice.text = FormatPriceUtility.formatNumber(num: product.price!)
         cell.layer.borderColor = UIColor.gray.cgColor
-        self.configure(with: product.thumbnail ?? "", imageView: cell.productImage)
+        self.configureImage(with: product.thumbnail ?? "", imageView: cell.productImage)
         cell.layer.borderWidth = 0.5
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.width / numberOfColumns)
-        return CGSize(width: width, height: width + 30)
+        let height: CGFloat = 315
+        return CGSize(width: width, height: height)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let productDetailVC = UIStoryboard(name: "ProductDetail", bundle: nil).instantiateViewController(withIdentifier: "productDetailVC") as! ProductDetailViewController
+        productDetailVC.product = productListViewModel.product(at: indexPath.row)
+        self.navigationController?.pushViewController(productDetailVC, animated: true)
+    }
+}
+
+extension ProductListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchText = searchBar.text, !searchText.isEmpty {
+            showProgress(message: "Cargando", style: .dark, presentationContext: .overCurrentContext)
+            productListViewModel.fetchProducts(query: searchText) { result in
+                switch result {
+                case .success(_):
+                    self.productListCollectionView.reloadData()
+                    self.progress?.hide(animated: true)
+                case .failure(let error):
+                    print("Error: \(error)")
+                    self.progress?.hide(animated: true)
+                }
+            }
+        }
+    }
+    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        if let searchText = searchBar.text, !searchText.isEmpty {
+//            //showProgress(message: "Cargando", style: .dark, presentationContext: .overCurrentContext)
+//            productListViewModel.fetchProducts(query: searchText) { result in
+//                switch result {
+//                case .success(_):
+//                    self.productListCollectionView.reloadData()
+//                    //self.progress?.hide(animated: true)
+//                case .failure(let error):
+//                    print("Error: \(error)")
+//                    //self.progress?.hide(animated: true)
+//                }
+//            }
+//        }
+//    }
 }
