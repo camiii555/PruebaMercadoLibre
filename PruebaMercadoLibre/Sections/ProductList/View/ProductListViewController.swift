@@ -116,6 +116,7 @@ extension ProductListViewController: UICollectionViewDelegate, UICollectionViewD
 extension ProductListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchText = searchBar.text, !searchText.isEmpty {
+            searchBar.resignFirstResponder()
             showProgress(message: "Cargando", style: .dark, presentationContext: .overCurrentContext)
             productListViewModel.fetchProducts(query: searchText) { result in
                 switch result {

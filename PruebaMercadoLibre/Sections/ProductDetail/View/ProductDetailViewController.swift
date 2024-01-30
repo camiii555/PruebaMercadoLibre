@@ -46,7 +46,6 @@ class ProductDetailViewController: BaseViewController {
             return "Usado"
         }
     }
-    
 }
 
 // MARK: - TableView Methods
