@@ -11,9 +11,12 @@ import Foundation
 class FormatPriceUtility {
     
     static func formatNumber(num: Double) -> String {
-        // Convert number to integer
-        let newNum = Int(num)
         
+        guard num.isFinite else {
+            return "Error al formatear el precio"
+        }
+        // Convert number to integer
+        let newNum = Int(ceil(num))
         // Format integer as price
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency

@@ -11,9 +11,12 @@
 		D21633CD2B6893DB00264B45 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21633CB2B6893DB00264B45 /* ProductTableViewCell.xib */; };
 		D21633D02B68A2F100264B45 /* ProductAttributesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21633CE2B68A2F100264B45 /* ProductAttributesTableViewCell.swift */; };
 		D21633D12B68A2F100264B45 /* ProductAttributesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D21633CF2B68A2F100264B45 /* ProductAttributesTableViewCell.xib */; };
+		D21633D92B68E1A300264B45 /* BaseViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21633D82B68E1A300264B45 /* BaseViewControllerTests.swift */; };
+		D21633DD2B68E66300264B45 /* ProductListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21633DC2B68E66300264B45 /* ProductListViewControllerTests.swift */; };
+		D2605CD22B69C5F000B8CD83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2605CD12B69C5F000B8CD83 /* Constants.swift */; };
+		D2605CD82B69D4B000B8CD83 /* FormatPriceUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2605CD72B69D4B000B8CD83 /* FormatPriceUtilityTests.swift */; };
 		D269AF272B6646EA00CBCB65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269AF262B6646EA00CBCB65 /* AppDelegate.swift */; };
 		D269AF292B6646EA00CBCB65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269AF282B6646EA00CBCB65 /* SceneDelegate.swift */; };
-		D269AF2B2B6646EA00CBCB65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269AF2A2B6646EA00CBCB65 /* ViewController.swift */; };
 		D269AF2E2B6646EA00CBCB65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D269AF2C2B6646EA00CBCB65 /* Main.storyboard */; };
 		D269AF302B6646EC00CBCB65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D269AF2F2B6646EC00CBCB65 /* Assets.xcassets */; };
 		D269AF332B6646EC00CBCB65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D269AF312B6646EC00CBCB65 /* LaunchScreen.storyboard */; };
@@ -57,10 +60,13 @@
 		D21633CB2B6893DB00264B45 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		D21633CE2B68A2F100264B45 /* ProductAttributesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAttributesTableViewCell.swift; sourceTree = "<group>"; };
 		D21633CF2B68A2F100264B45 /* ProductAttributesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductAttributesTableViewCell.xib; sourceTree = "<group>"; };
+		D21633D82B68E1A300264B45 /* BaseViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerTests.swift; sourceTree = "<group>"; };
+		D21633DC2B68E66300264B45 /* ProductListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewControllerTests.swift; sourceTree = "<group>"; };
+		D2605CD12B69C5F000B8CD83 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D2605CD72B69D4B000B8CD83 /* FormatPriceUtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatPriceUtilityTests.swift; sourceTree = "<group>"; };
 		D269AF232B6646EA00CBCB65 /* PruebaMercadoLibre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PruebaMercadoLibre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D269AF262B6646EA00CBCB65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D269AF282B6646EA00CBCB65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D269AF2A2B6646EA00CBCB65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D269AF2D2B6646EA00CBCB65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D269AF2F2B6646EC00CBCB65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D269AF322B6646EC00CBCB65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,6 +127,65 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		D21633D72B68E17C00264B45 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D21633D82B68E1A300264B45 /* BaseViewControllerTests.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D21633DA2B68E5CE00264B45 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				D21633DB2B68E64600264B45 /* ProductList */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		D21633DB2B68E64600264B45 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				D21633DC2B68E66300264B45 /* ProductListViewControllerTests.swift */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		D2605CD32B69CD3A00B8CD83 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D269AF312B6646EC00CBCB65 /* LaunchScreen.storyboard */,
+				D2A352772B6886D50085789D /* ProductDetail.storyboard */,
+				D269AF2C2B6646EA00CBCB65 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D2605CD42B69CD6600B8CD83 /* InfoPlist */ = {
+			isa = PBXGroup;
+			children = (
+				D269AF342B6646EC00CBCB65 /* Info.plist */,
+			);
+			path = InfoPlist;
+			sourceTree = "<group>";
+		};
+		D2605CD52B69CD9400B8CD83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D269AF712B6769BA00CBCB65 /* LoadingView.swift */,
+				D269AF722B6769BA00CBCB65 /* LoadingView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D2605CD62B69D49500B8CD83 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D2605CD72B69D4B000B8CD83 /* FormatPriceUtilityTests.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		D269AF1A2B6646EA00CBCB65 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +209,8 @@
 		D269AF252B6646EA00CBCB65 /* PruebaMercadoLibre */ = {
 			isa = PBXGroup;
 			children = (
+				D2605CD42B69CD6600B8CD83 /* InfoPlist */,
+				D2605CD32B69CD3A00B8CD83 /* Storyboards */,
 				D269AF752B676BF400CBCB65 /* Resources */,
 				D269AF6D2B66C65900CBCB65 /* Client */,
 				D269AF6A2B664BDD00CBCB65 /* Utilities */,
@@ -151,11 +218,6 @@
 				D269AF562B66494700CBCB65 /* Base */,
 				D269AF262B6646EA00CBCB65 /* AppDelegate.swift */,
 				D269AF282B6646EA00CBCB65 /* SceneDelegate.swift */,
-				D269AF2A2B6646EA00CBCB65 /* ViewController.swift */,
-				D269AF2C2B6646EA00CBCB65 /* Main.storyboard */,
-				D269AF312B6646EC00CBCB65 /* LaunchScreen.storyboard */,
-				D269AF342B6646EC00CBCB65 /* Info.plist */,
-				D2A352772B6886D50085789D /* ProductDetail.storyboard */,
 			);
 			path = PruebaMercadoLibre;
 			sourceTree = "<group>";
@@ -163,6 +225,9 @@
 		D269AF3C2B6646EC00CBCB65 /* PruebaMercadoLibreTests */ = {
 			isa = PBXGroup;
 			children = (
+				D2605CD62B69D49500B8CD83 /* Utilities */,
+				D21633DA2B68E5CE00264B45 /* Sections */,
+				D21633D72B68E17C00264B45 /* Base */,
 				D269AF3D2B6646EC00CBCB65 /* PruebaMercadoLibreTests.swift */,
 			);
 			path = PruebaMercadoLibreTests;
@@ -258,8 +323,7 @@
 		D269AF702B67675600CBCB65 /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
-				D269AF712B6769BA00CBCB65 /* LoadingView.swift */,
-				D269AF722B6769BA00CBCB65 /* LoadingView.xib */,
+				D2605CD52B69CD9400B8CD83 /* View */,
 			);
 			path = LoadingView;
 			sourceTree = "<group>";
@@ -269,6 +333,7 @@
 			children = (
 				D269AF762B676C1000CBCB65 /* Extensions */,
 				D269AF2F2B6646EC00CBCB65 /* Assets.xcassets */,
+				D2605CD12B69C5F000B8CD83 /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -434,13 +499,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D269AF2B2B6646EA00CBCB65 /* ViewController.swift in Sources */,
 				D269AF672B664AF800CBCB65 /* ProductListModel.swift in Sources */,
 				D269AF582B66495D00CBCB65 /* BaseViewController.swift in Sources */,
 				D269AF6F2B66C66B00CBCB65 /* APIClient.swift in Sources */,
 				D2A352752B6885D10085789D /* ProductDetailViewController.swift in Sources */,
 				D21633D02B68A2F100264B45 /* ProductAttributesTableViewCell.swift in Sources */,
 				D269AF602B6649AF00CBCB65 /* ProductListViewController.swift in Sources */,
+				D2605CD22B69C5F000B8CD83 /* Constants.swift in Sources */,
 				D269AF272B6646EA00CBCB65 /* AppDelegate.swift in Sources */,
 				D269AF732B6769BA00CBCB65 /* LoadingView.swift in Sources */,
 				D269AF642B664AA500CBCB65 /* ProductCollectionViewCell.swift in Sources */,
@@ -457,6 +522,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D269AF3E2B6646EC00CBCB65 /* PruebaMercadoLibreTests.swift in Sources */,
+				D21633DD2B68E66300264B45 /* ProductListViewControllerTests.swift in Sources */,
+				D21633D92B68E1A300264B45 /* BaseViewControllerTests.swift in Sources */,
+				D2605CD82B69D4B000B8CD83 /* FormatPriceUtilityTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,7 +700,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4SCMU57SX9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PruebaMercadoLibre/Info.plist;
+				INFOPLIST_FILE = PruebaMercadoLibre/InfoPlist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -660,7 +728,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4SCMU57SX9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PruebaMercadoLibre/Info.plist;
+				INFOPLIST_FILE = PruebaMercadoLibre/InfoPlist/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

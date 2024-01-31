@@ -2,7 +2,7 @@
 //  PruebaMercadoLibreTests.swift
 //  PruebaMercadoLibreTests
 //
-//  Created by MacBook J&J  on 28/01/24.
+//  Created by Juan Camilo Mejia  on 28/01/24.
 //
 
 import XCTest

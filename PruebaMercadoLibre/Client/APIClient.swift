@@ -18,6 +18,7 @@ class APIClient {
         method: HTTPMethod = .get,
         headers: [String: String]? = nil,
         parameters: [String: Any]? = nil,
+        httpBody: Data? = nil,
         completion: @escaping (APIResult<T>) -> Void
     ) {
         guard var urlComponents = URLComponents(string: urlString) else {
@@ -50,11 +51,27 @@ class APIClient {
             }
         }
         
-        print("URL -> \(url)")
+        // Set HTTP body if provided
+        if let httpBody = httpBody {
+            request.httpBody = httpBody
+        }
+        
+        print("URL -> \(request)")
+        print("Method -> \(String(describing: request.httpMethod))")
+        print("Headers -> \(String(describing: request.allHTTPHeaderFields))")
+        print("Body -> \(String(describing: request.httpBody))")
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let httpResponse = response as? HTTPURLResponse {
                 print("Status Code: \(httpResponse.statusCode)")
+                
+                // Check for error status code
+                if httpResponse.statusCode >= 400 {
+                    completion(.failure(.networkError(NSError(domain: "", code: httpResponse.statusCode, userInfo: nil))))
+                    return
+                }
+                
+                // Parse data only for successful status codes
                 if let data = data {
                     do {
                         let decodedObject = try JSONDecoder().decode(T.self, from: data)
@@ -72,6 +89,8 @@ class APIClient {
             }
         }.resume()
     }
+
+
 }
 
 enum APIError: Error {

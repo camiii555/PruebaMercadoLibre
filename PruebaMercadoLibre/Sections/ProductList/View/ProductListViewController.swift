@@ -25,6 +25,7 @@ class ProductListViewController: BaseViewController {
         super.viewDidLoad()
         setupSearchBar()
         setupCollectionView()
+        getDataProductList(queryString: "Aletorio")
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -79,6 +80,23 @@ class ProductListViewController: BaseViewController {
         }
     }
     
+    // Function to obtain the list of products
+    private func getDataProductList(queryString: String) {
+        showProgress(message: "Cargando", style: .dark, presentationContext: .overCurrentContext)
+        productListViewModel.fetchProducts(query: queryString) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(_):
+                    self.productListCollectionView.reloadData()
+                    self.progress?.hide(animated: true)
+                case .failure(let error):
+                    print("Error: \(error)")
+                    self.progress?.hide(animated: true)
+                    self.showAlert(title: Constants.Alert.titleAlert, message: Constants.Alert.messageAlet)
+                }
+            }
+        }
+    }
 }
 
 //MARK: - Collection View Methods
@@ -113,37 +131,12 @@ extension ProductListViewController: UICollectionViewDelegate, UICollectionViewD
     }
 }
 
+// MARK: - SearchBar Methods
 extension ProductListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchText = searchBar.text, !searchText.isEmpty {
             searchBar.resignFirstResponder()
-            showProgress(message: "Cargando", style: .dark, presentationContext: .overCurrentContext)
-            productListViewModel.fetchProducts(query: searchText) { result in
-                switch result {
-                case .success(_):
-                    self.productListCollectionView.reloadData()
-                    self.progress?.hide(animated: true)
-                case .failure(let error):
-                    print("Error: \(error)")
-                    self.progress?.hide(animated: true)
-                }
-            }
+            getDataProductList(queryString: searchText)
         }
     }
-    
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        if let searchText = searchBar.text, !searchText.isEmpty {
-//            //showProgress(message: "Cargando", style: .dark, presentationContext: .overCurrentContext)
-//            productListViewModel.fetchProducts(query: searchText) { result in
-//                switch result {
-//                case .success(_):
-//                    self.productListCollectionView.reloadData()
-//                    //self.progress?.hide(animated: true)
-//                case .failure(let error):
-//                    print("Error: \(error)")
-//                    //self.progress?.hide(animated: true)
-//                }
-//            }
-//        }
-//    }
 }
