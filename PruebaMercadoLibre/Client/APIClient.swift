@@ -10,7 +10,7 @@ class APIClient {
     
     static let shared = APIClient()
     
-    private init() {}
+    internal init() {}
     
     func fetchData<T: Decodable>(
         urlString: String,
@@ -93,11 +93,26 @@ class APIClient {
 
 }
 
-enum APIError: Error {
+
+enum APIError: Error, Equatable {
     case invalidURL
     case noData
     case decodingError(Error)
     case networkError(Error)
+
+    static func == (lhs: APIError, rhs: APIError) -> Bool {
+        switch (lhs, rhs) {
+        case (.invalidURL, .invalidURL),
+             (.noData, .noData):
+            return true
+        case let (.decodingError(error1), .decodingError(error2)):
+            return error1.localizedDescription == error2.localizedDescription
+        case let (.networkError(error1), .networkError(error2)):
+            return error1.localizedDescription == error2.localizedDescription
+        default:
+            return false
+        }
+    }
 }
 
 enum APIResult<T> {

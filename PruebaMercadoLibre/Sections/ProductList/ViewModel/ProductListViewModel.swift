@@ -7,17 +7,23 @@
 
 import Foundation
 
-
 class ProductListViewModel {
     
     // Private property to store the list of products.
     private var products: [Result] = []
+    
+    // Injected dependency for APIClient
+    private let apiClient: APIClient
+
+    // Initializer that accepts an APIClient instance
+    init(apiClient: APIClient = APIClient.shared) {
+        self.apiClient = apiClient
+    }
 
     // Function to fetch products based on a query string.
     func fetchProducts(query: String, completion: @escaping (Swift.Result<[Result], Error>) -> Void) {
-        
-        // Use the shared instance of APIClient to fetch data from the API.
-        APIClient.shared.fetchData(urlString: Constants.ApiUrls.apiListOfProducts, objectType: ProductListModel.self, method: .get, parameters: ["q" : query]) { result in
+        // Use the injected APIClient instance to fetch data from the API.
+        apiClient.fetchData(urlString: Constants.ApiUrls.apiListOfProducts, objectType: ProductListModel.self, method: .get, parameters: ["q" : query]) { result in
             // Handle the result of the API call.
             switch result {
             case .success(let products):
@@ -41,6 +47,7 @@ class ProductListViewModel {
         return products[index]
     }
 }
+
 
 
 

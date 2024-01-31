@@ -26,20 +26,20 @@ class ProductDetailViewController: BaseViewController {
     
     //MARK: - Private Methods
     // Setup product detail table view cell
-    private func setupTableView() {
+    internal func setupTableView() {
         productDetailTabletView.delegate = self
         productDetailTabletView.dataSource = self
         registerCells()
     }
     
     // Register cells in table view
-    private func registerCells() {
+    internal func registerCells() {
         productDetailTabletView.register(UINib(nibName: Cells.productTableViewCell, bundle: nil), forCellReuseIdentifier: Cells.productTableViewCell)
     }
     
     
     // Method to change the state language to Spanish
-    private func translateProductStatus(status: String) -> String {
+    internal func translateProductStatus(status: String) -> String {
         if status.lowercased().elementsEqual("new") {
             return "Nuevo"
         } else {

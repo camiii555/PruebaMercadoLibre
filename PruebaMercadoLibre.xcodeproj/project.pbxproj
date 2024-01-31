@@ -15,6 +15,7 @@
 		D21633DD2B68E66300264B45 /* ProductListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D21633DC2B68E66300264B45 /* ProductListViewControllerTests.swift */; };
 		D2605CD22B69C5F000B8CD83 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2605CD12B69C5F000B8CD83 /* Constants.swift */; };
 		D2605CD82B69D4B000B8CD83 /* FormatPriceUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2605CD72B69D4B000B8CD83 /* FormatPriceUtilityTests.swift */; };
+		D2605CE42B69E9D400B8CD83 /* ProductDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2605CE32B69E9D400B8CD83 /* ProductDetailViewControllerTests.swift */; };
 		D269AF272B6646EA00CBCB65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269AF262B6646EA00CBCB65 /* AppDelegate.swift */; };
 		D269AF292B6646EA00CBCB65 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D269AF282B6646EA00CBCB65 /* SceneDelegate.swift */; };
 		D269AF2E2B6646EA00CBCB65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D269AF2C2B6646EA00CBCB65 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		D21633DC2B68E66300264B45 /* ProductListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewControllerTests.swift; sourceTree = "<group>"; };
 		D2605CD12B69C5F000B8CD83 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D2605CD72B69D4B000B8CD83 /* FormatPriceUtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatPriceUtilityTests.swift; sourceTree = "<group>"; };
+		D2605CE32B69E9D400B8CD83 /* ProductDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		D269AF232B6646EA00CBCB65 /* PruebaMercadoLibre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PruebaMercadoLibre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D269AF262B6646EA00CBCB65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D269AF282B6646EA00CBCB65 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		D21633DA2B68E5CE00264B45 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				D2605CE12B69E93900B8CD83 /* ProductDetail */,
 				D21633DB2B68E64600264B45 /* ProductList */,
 			);
 			path = Sections;
@@ -146,7 +149,7 @@
 		D21633DB2B68E64600264B45 /* ProductList */ = {
 			isa = PBXGroup;
 			children = (
-				D21633DC2B68E66300264B45 /* ProductListViewControllerTests.swift */,
+				D2605CDD2B69E5C800B8CD83 /* View */,
 			);
 			path = ProductList;
 			sourceTree = "<group>";
@@ -184,6 +187,30 @@
 				D2605CD72B69D4B000B8CD83 /* FormatPriceUtilityTests.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		D2605CDD2B69E5C800B8CD83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D21633DC2B68E66300264B45 /* ProductListViewControllerTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D2605CE12B69E93900B8CD83 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D2605CE22B69E9B900B8CD83 /* View */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		D2605CE22B69E9B900B8CD83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D2605CE32B69E9D400B8CD83 /* ProductDetailViewControllerTests.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D269AF1A2B6646EA00CBCB65 = {
@@ -521,6 +548,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2605CE42B69E9D400B8CD83 /* ProductDetailViewControllerTests.swift in Sources */,
 				D269AF3E2B6646EC00CBCB65 /* PruebaMercadoLibreTests.swift in Sources */,
 				D21633DD2B68E66300264B45 /* ProductListViewControllerTests.swift in Sources */,
 				D21633D92B68E1A300264B45 /* BaseViewControllerTests.swift in Sources */,
