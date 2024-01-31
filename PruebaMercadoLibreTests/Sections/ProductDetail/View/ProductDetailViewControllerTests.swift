@@ -66,9 +66,5 @@ class ProductDetailViewControllerTests: XCTestCase {
         let translatedStatus = sut.translateProductStatus(status: "Used")
         XCTAssertEqual(translatedStatus, "Usado")
     }
-    
-    // Add more tests as needed...
-    
-    // Note: Since the ProductTableViewCell implementation is not provided, you may want to create a mock or test it separately.
 }
 
