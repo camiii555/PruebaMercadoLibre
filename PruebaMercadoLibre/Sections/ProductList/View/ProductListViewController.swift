@@ -137,6 +137,7 @@ extension ProductListViewController: UISearchBarDelegate {
         if let searchText = searchBar.text, !searchText.isEmpty {
             searchBar.resignFirstResponder()
             getDataProductList(queryString: searchText)
+            self.productListCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: UICollectionView.ScrollPosition.centeredVertically, animated: true)
         }
     }
 }
